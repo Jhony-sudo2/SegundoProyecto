@@ -64,7 +64,10 @@ public class Arbol {
         }else{
             
             if(t.getDato() == Dato.getValor() & t.getCarta().getCarta().equals(Dato.getCarta())){
-                if(t.getDerecha() == null & t.getIzquierda() == null) t = null;
+                if(t.getDerecha() == null & t.getIzquierda() == null){
+                    t = null;
+                    Estado = 1;
+                }
                 else if(t.getDerecha() != null | t.getIzquierda()!=null){
                  Estado = 3;
                  System.out.println("EL nodod tiene hijos");   

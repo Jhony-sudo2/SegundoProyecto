@@ -85,7 +85,7 @@ public class UserService {
                         avl.ELiminar(avl.getRaiz(),carta1);
                         avl.ELiminar(avl.getRaiz(),carta2);
                         return avl.Estado;
-                    }else return 2;
+                    }else return 3;
                 }else return 4;
 
             }else{
@@ -95,7 +95,7 @@ public class UserService {
                     if(tmp.getValor() == 13){
                         avl.ELiminar(avl.getRaiz(),tmp);
                         return avl.Estado;
-                    }else return 2;
+                    }else return 3;
                 }else return 4;
             }
         }else return 4;
