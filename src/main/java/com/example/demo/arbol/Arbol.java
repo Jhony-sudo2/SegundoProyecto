@@ -1,6 +1,8 @@
 package com.example.demo.arbol;
 import java.util.ArrayList;
 
+import com.example.demo.imagen.Imagen;
+
 public class Arbol {
     private Nodo Raiz;
     private ArrayList<Nodo> Recorrido = new ArrayList<Nodo>();
@@ -196,7 +198,7 @@ public class Arbol {
     
 
     public void Recorrido(int n,Nodo t,int L){
-        
+        System.out.println(t);
         if(t.getDerecha() == null & t.getIzquierda() == null){
             System.out.println(t);
             int x = pImagen.getLongitud();

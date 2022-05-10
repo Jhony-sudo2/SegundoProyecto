@@ -46,8 +46,8 @@ public class UserService {
     public boolean Verificar(String Imagen){
         Pattern pat = Pattern.compile("(10|[2-9]|J|Q|K|A)[♣♥♦♠]");
         Matcher mat = pat.matcher(Imagen);
-        if(mat.matches()) return true;
-        else return false;
+        if(mat.matches())return true; 
+        else ;return false;
     }
 
     public boolean Repetido(String Imagen){
@@ -122,7 +122,7 @@ public class UserService {
         JSONObject N = new JSONObject();
         avl.Recorrido(1,avl.getRaiz(),0);
         avl.Pintar();
-        N.put("path", avl.getPath());
+        N.put("path","https://www.dropbox.com/sh/837n94ewjbmqbxf/AABZ84-_p125CIbpVvvp5JSja?dl=0");
         return N;
     }
 

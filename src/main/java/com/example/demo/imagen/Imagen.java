@@ -1,4 +1,4 @@
-package com.example.demo.arbol;
+package com.example.demo.imagen;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
@@ -7,6 +7,8 @@ import java.io.File;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
+
+import com.example.demo.arbol.Nodo;
 public class Imagen {
     private BufferedImage imagen; 
     private Graphics g;
@@ -53,6 +55,7 @@ public class Imagen {
     public void Pintar(){
         try {
             ImageIO.write(imagen,Formato,Fichero);
+            DropboxImagen.Cargar();
         } catch (IOException e) {
             System.out.println("ERRO DE ESCRITURA");
         }
