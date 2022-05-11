@@ -22,6 +22,7 @@ public class UserService {
         while(x<y){
             String Imagen = (String)Json.get(x+"");
             StringBuilder P = new StringBuilder(Imagen);
+            //Problema de string
             for(int i=0;i<Imagen.length();i++){
                 int n = Imagen.charAt(i);
                 if(n==65039) {
