@@ -5,7 +5,6 @@ import java.util.regex.Matcher;
 import com.example.demo.arbol.Arbol;
 import com.example.demo.arbol.Carta;
 import com.example.demo.arbol.Nodo;
-
 import org.json.simple.JSONObject;
 import org.json.simple.JSONValue;
 import org.springframework.http.HttpStatus;
@@ -22,13 +21,23 @@ public class UserService {
         JSONObject Json = (JSONObject) obj;
         while(x<y){
             String Imagen = (String)Json.get(x+"");
-            System.out.println("IMAGEN: "+Imagen);
+            StringBuilder P = new StringBuilder(Imagen);
+            for(int i=0;i<Imagen.length();i++){
+                int n = Imagen.charAt(i);
+                if(n==65039) {
+                    Imagen.replace(String.valueOf(Imagen.charAt(i)),"");
+                    P.deleteCharAt(i);
+                }   
+            }
+            Imagen = String.valueOf(P);
             if(Verificar(Imagen) & Repetido(Imagen)){
-            Carta Cartatmp = new Carta(Imagen);
-            Cartas.add(Cartatmp);
-            avl.Agregar(Cartatmp);
+                System.out.println("IMAGEN: "+Imagen);
+                Carta Cartatmp = new Carta(Imagen);
+                Cartas.add(Cartatmp);
+                avl.Agregar(Cartatmp);
             }
             x++;
+            
         }
         return HttpStatus.OK;
     }
